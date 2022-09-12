@@ -26,9 +26,9 @@ function Fallright () {
         boxx = 4
         boxy = 3
         led.plot(boxx, boxy)
-        radio.sendValue("xTarget", boxx)
-        radio.sendValue("yTarget", boxy)
     }
+    radio.sendValue("xTarget", 4)
+    radio.sendValue("yTarget", 3)
 }
 function position (x: number, y: number) {
     led.unplot(xPosition, yPosition)
@@ -85,11 +85,12 @@ radio.onReceivedValue(function (name, value) {
     if (name == "xPos") {
         position(value, yPosition)
     } else if (name == "yPos") {
-        position(value, xPosition)
-    } else if (name == "interact" && value == 1) {
-        basic.showNumber(3)
-    } else {
+        position(xPosition, value)
+    } else if (false) {
     	
+    }
+    if (name == "interact" && value == 1) {
+        basic.showNumber(3)
     }
 })
 let boxy = 0
