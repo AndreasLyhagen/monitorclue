@@ -86,11 +86,11 @@ radio.onReceivedValue(function (name, value) {
         position(value, yPosition)
     } else if (name == "yPos") {
         position(xPosition, value)
-    } else if (false) {
+    } else if (name == "interact" && value == 1) {
     	
     }
-    if (name == "interact" && value == 1) {
-        basic.showNumber(3)
+    if (true) {
+        basic.showNumber(1)
     }
 })
 let boxy = 0
@@ -98,7 +98,7 @@ let boxx = 0
 let unlocked = 0
 let yPosition = 0
 let xPosition = 0
-radio.setGroup(1)
+radio.setGroup(10)
 xPosition = 0
 yPosition = 0
 unlocked = 0
